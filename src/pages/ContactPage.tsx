@@ -94,7 +94,7 @@ export function ContactPage() {
       </ContentSection>
 
       {/* Social Links */}
-      <ContentSection background="light" padding="lg">
+      <ContentSection background="white" padding="lg">
         <div className="text-center">
           <Heading level={3} color="text" className="mb-6">
             {t('contact.followUs')}
@@ -136,25 +136,6 @@ export function ContactPage() {
         </div>
       </ContentSection>
 
-      {/* Join Us */}
-      <ContentSection background="primary" padding="lg">
-        <div className="text-center text-white">
-          <Heading level={2} color="white" className="mb-4">
-            {t('contact.joinTeam')}
-          </Heading>
-          <Paragraph color="white" size="lg" className="mb-6 opacity-90 max-w-2xl mx-auto">
-            {t('contact.joinTeamDescription')}
-          </Paragraph>
-          <Link
-            href="mailto:cterrer@mit.edu?subject=Interest%20in%20Joining%20Terrer%20Lab"
-            variant="white"
-            className="inline-flex items-center gap-2 bg-white text-[var(--color-primary)] px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition-all"
-          >
-            {t('contact.contactOpportunities')}
-            <Icon name="ArrowRight" size={16} />
-          </Link>
-        </div>
-      </ContentSection>
     </DetailPageLayout>
   );
 }

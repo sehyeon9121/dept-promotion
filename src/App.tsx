@@ -4,14 +4,17 @@ import { AnimatePresence } from 'framer-motion';
 import { LanguageProvider } from '@/contexts/LanguageContext';
 import {
   HomePage,
-  ResearchPage,
+  AboutPage,
   TeamPage,
   PublicationsPage,
+  EducationGoalPage,
+  CourseMapPage,
+  CourseOverviewPage,
+  LabStatusPage,
   NewsPage,
   BigQuestionsPage,
   BigQuestionDetailPage,
   ContactPage,
-  JoinUsPage,
   ClimateSnacksPage,
 } from '@/pages';
 
@@ -45,14 +48,17 @@ function App() {
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
         <Route path="/" element={<HomePage />} />
-        <Route path="/research" element={<ResearchPage />} />
-        <Route path="/team" element={<TeamPage />} />
-        <Route path="/publications/:category?" element={<PublicationsPage />} />
-        <Route path="/news" element={<NewsPage />} />
-        <Route path="/big-questions" element={<BigQuestionsPage />} />
-        <Route path="/big-questions/:id" element={<BigQuestionDetailPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/faculty" element={<TeamPage />} />
+        <Route path="/curriculum" element={<PublicationsPage />} />
+        <Route path="/curriculum/education-goal" element={<EducationGoalPage />} />
+        <Route path="/curriculum/course-map" element={<CourseMapPage />} />
+        <Route path="/curriculum/course-overview" element={<CourseOverviewPage />} />
+        <Route path="/curriculum/lab-status" element={<LabStatusPage />} />
+        <Route path="/notice" element={<NewsPage />} />
+        <Route path="/career" element={<BigQuestionsPage />} />
+        <Route path="/career/:id" element={<BigQuestionDetailPage />} />
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="/join-us" element={<JoinUsPage />} />
         <Route path="/climate-snacks" element={<ClimateSnacksPage />} />
         </Routes>
       </AnimatePresence>

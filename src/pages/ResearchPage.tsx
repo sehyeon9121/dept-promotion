@@ -43,7 +43,7 @@ export function ResearchPage() {
         title={t('research.themesTitle')}
         columns={2}
         gap="lg"
-        background="light"
+        background="white"
         padding="lg"
       >
         {translatedResearchThemes.map((theme, index) => (

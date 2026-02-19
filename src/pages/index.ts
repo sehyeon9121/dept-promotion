@@ -1,10 +1,14 @@
 export { HomePage } from './HomePage';
+export { AboutPage } from './AboutPage';
 export { ResearchPage } from './ResearchPage';
 export { TeamPage } from './TeamPage';
 export { PublicationsPage } from './PublicationsPage';
+export { EducationGoalPage } from './EducationGoalPage';
+export { CourseMapPage } from './CourseMapPage';
+export { CourseOverviewPage } from './CourseOverviewPage';
+export { LabStatusPage } from './LabStatusPage';
 export { NewsPage } from './NewsPage';
 export { BigQuestionsPage } from './BigQuestionsPage';
 export { BigQuestionDetailPage } from './BigQuestionDetailPage';
 export { ContactPage } from './ContactPage';
-export { JoinUsPage } from './JoinUsPage';
 export { ClimateSnacksPage } from './ClimateSnacksPage';

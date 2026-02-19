@@ -15,7 +15,6 @@ export const publicationsDropdownItems: NavItem[] = [
 
 export const peopleDropdownItems: NavItem[] = [
   { label: 'Our Team', href: '/team' },
-  { label: 'Join Us', href: '/join-us' },
 ];
 
 export const newsDropdownItems: NavItem[] = [

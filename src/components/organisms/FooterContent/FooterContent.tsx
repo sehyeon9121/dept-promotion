@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { Link } from '@/components/atoms/Link';
 import { cn } from '@/utils/cn';
 
 export interface FooterContentProps {
@@ -12,29 +11,21 @@ export function FooterContent({ className }: FooterContentProps) {
   return (
     <footer
       className={cn(
-        'w-full bg-[#1a1a1a] text-white flex items-center justify-center overflow-hidden',
+        'w-full bg-white text-slate-900 flex items-center justify-center overflow-hidden border-t border-slate-200',
         className
       )}
       style={{ height: 87 }}
     >
-      <div className="mx-auto flex flex-col md:flex-row items-center justify-between gap-4" style={{ maxWidth: 1153, width: '100%', paddingLeft: 20, paddingRight: 20 }}>
+      <div className="mx-auto flex flex-col md:flex-row items-center justify-between gap-4" style={{ maxWidth: 1200, width: '100%', paddingLeft: 20, paddingRight: 20 }}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.2, ease: 'easeOut' }}
-          className="text-white/80"
-          style={{ fontSize: 16 }}
+          className="text-slate-500"
+          style={{ fontSize: 14 }}
         >
-          © Copyright {currentYear} | ACT Lab |{' '}
-          <Link
-            href="https://www.koreatech.ac.kr/kor/index.jsp"
-            variant="white"
-            className="hover:text-white"
-            style={{ textDecoration: 'underline' }}
-          >
-            Koreatech.ac.kr
-          </Link>
+          © {currentYear} OO대학교 건축공학과. All rights reserved.
         </motion.div>
       </div>
     </footer>

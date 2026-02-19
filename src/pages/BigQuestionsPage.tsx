@@ -33,7 +33,7 @@ export function BigQuestionsPage() {
       <GridSection
         columns={2}
         gap="lg"
-        background="light"
+        background="white"
         padding="xl"
       >
         {translatedQuestions.map((question, index) => (

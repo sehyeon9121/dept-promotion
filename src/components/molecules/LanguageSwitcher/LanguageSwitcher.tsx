@@ -15,7 +15,6 @@ export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
   const { language, setLanguage, t } = useLanguage();
 
   const languages: { code: Language; label: string }[] = [
-    { code: 'EN', label: t('language.english') },
     { code: 'KO', label: t('language.korean') },
   ];
   const [isOpen, setIsOpen] = useState(false);
@@ -51,7 +50,7 @@ export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
         disableAnimation
       >
         <Text size="sm" weight={500}>
-          {language === 'EN' ? t('language.english') : t('language.korean')}
+          {t('language.korean')}
         </Text>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}

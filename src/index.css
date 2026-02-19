@@ -11,17 +11,20 @@
 
 /* CSS Variables */
 :root {
-  --color-primary: #2B5329;
-  --color-primary-light: #3d7a3a;
-  --color-secondary: #F5A623;
-  --color-accent: #4A90A4;
-  --color-text: #333333;
-  --color-text-light: #666666;
-  --color-text-muted: #999999;
-  --color-bg: #FFFFFF;
-  --color-bg-dark: #1A1A1A;
-  --color-bg-section: #F8F8F8;
-  --color-border: #E5E5E5;
+  --color-primary: #f97316;
+  --color-primary-light: #fb923c;
+  --color-secondary: #1e293b;
+  --color-accent: #f97316;
+  --color-text: #1e293b;
+  --color-text-light: #64748b;
+  --color-text-muted: #94a3b8;
+  --color-text-dark: #0f172a;
+  --color-bg: #ffffff;
+  --color-bg-dark: #f8fafc;
+  --color-bg-section: #f8fafc;
+  --color-bg-slate: #f1f5f9;
+  --color-bg-navy: #ffffff;
+  --color-border: #e2e8f0;
 
   --font-sans: 'Inter', sans-serif;
   --font-serif: 'Playfair Display', serif;
@@ -51,11 +54,24 @@ html {
 body {
   font-family: var(--font-sans);
   color: var(--color-text);
-  background-color: var(--color-bg);
+  background-color: #ffffff;
   line-height: 1.6;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
 }
 
 /* Typography Reset */
@@ -194,17 +210,4 @@ main > div {
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--color-bg-section);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--color-text-muted);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-text-light);
 }

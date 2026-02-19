@@ -37,6 +37,28 @@ export type { PublicationItemProps } from './PublicationItem';
 export { NewsItem } from './NewsItem';
 export type { NewsItemProps } from './NewsItem';
 
+// Tracks
+export { TrackCard } from './TrackCard';
+export type { TrackCardProps } from './TrackCard';
+export { TrackSection } from './TrackSection';
+export type { TrackSectionProps, TrackItem } from './TrackSection';
+
+// Career Stats
+export { StatCard } from './StatCard';
+export type { StatCardProps } from './StatCard';
+export { CareerStatsSection } from './CareerStatsSection';
+export type { CareerStatsSectionProps, StatItem } from './CareerStatsSection';
+
+// Research Projects
+export { ResearchProjectCard } from './ResearchProjectCard';
+export type { ResearchProjectCardProps } from './ResearchProjectCard';
+export { ResearchProjectsSection } from './ResearchProjectsSection';
+export type { ResearchProjectsSectionProps, ResearchProject } from './ResearchProjectsSection';
+
+// CTA
+export { CTABanner } from './CTABanner';
+export type { CTABannerProps } from './CTABanner';
+
 // Footer
 export { FooterContent } from './FooterContent';
 export type { FooterContentProps } from './FooterContent';

@@ -42,7 +42,7 @@ export function BigQuestionDetailPage() {
       </ContentSection>
 
       {/* Navigation */}
-      <ContentSection background="light" padding="lg">
+      <ContentSection background="white" padding="lg">
         <div className="flex flex-col sm:flex-row justify-between gap-4">
           {prevQuestion ? (
             <Link
