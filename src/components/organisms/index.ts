@@ -23,9 +23,9 @@ export type { BigQuestionCardProps } from './BigQuestionCard';
 export { BigQuestionContent } from './BigQuestionContent';
 export type { BigQuestionContentProps } from './BigQuestionContent';
 
-// Team
-export { TeamMemberCard } from './TeamMemberCard';
-export type { TeamMemberCardProps } from './TeamMemberCard';
+// Team (Faculty)
+export { FacultyCard } from './TeamMemberCard';
+export type { FacultyCardProps } from './TeamMemberCard';
 export { AlumniCard } from './AlumniCard';
 export type { AlumniCardProps } from './AlumniCard';
 

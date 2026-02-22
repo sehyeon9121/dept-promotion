@@ -108,9 +108,9 @@ const translations: Record<string, string> = {
   'people.researchAssistants': '연구 조교',
 
   // Team Page
-  'team.title': '구성원 소개',
-  'team.team': '팀',
-  'team.alumni': '학부생',
+  'team.title': '교수진 소개',
+  'team.team': '교수진',
+  'team.alumni': '기술연구원',
 
 
   // Contact Page
@@ -123,7 +123,7 @@ const translations: Record<string, string> = {
   'contact.ourLocation': '위치',
 
   // News Page
-  'news.title': '공지사항',
+  'news.title': '연구실',
   'news.subtitle': '건축공학과 최신 소식',
   'news.latestNews': '최신 공지',
 

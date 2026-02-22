@@ -1,32 +1,13 @@
 # 동문 목록
 # Terrer Lab Alumni
 
-- id: "Kang Seong Jin"
-  name: "Kang Seong Jin"
+- id: "Kim,seunggoo"
+  name: "김승구"
   position: "Alumni"
   bio: ""
-  image: ""
+  image: "images/김승구.png"
   email: ""
   affiliation:
     ko: "한국기술교육대학교 건축공학과"
     en: "Dept. of Architectural Engineering, KOREATECH"
 
-- id: "Kim Se Hyeon"
-  name: "Kim Se Hyeon"
-  position: "Alumni"
-  bio: ""
-  image: ""
-  email: ""
-  affiliation:
-    ko: "한국기술교육대학교 건축공학과"
-    en: "Dept. of Architectural Engineering, KOREATECH"
-
-- id: "Jang Ye Eun"
-  name: "Jang Ye Eun"
-  position: "Alumni"
-  bio: ""
-  image: ""
-  email: ""
-  affiliation:
-    ko: "한국기술교육대학교 건축공학과"
-    en: "Dept. of Architectural Engineering, KOREATECH"

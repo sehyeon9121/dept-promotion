@@ -8,6 +8,7 @@ export { CourseMapPage } from './CourseMapPage';
 export { CourseOverviewPage } from './CourseOverviewPage';
 export { LabStatusPage } from './LabStatusPage';
 export { NewsPage } from './NewsPage';
+export { LabPage } from './LabPage';
 export { BigQuestionsPage } from './BigQuestionsPage';
 export { BigQuestionDetailPage } from './BigQuestionDetailPage';
 export { ContactPage } from './ContactPage';

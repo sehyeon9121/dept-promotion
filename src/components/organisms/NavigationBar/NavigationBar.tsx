@@ -25,7 +25,7 @@ export function NavigationBar({ className }: NavigationBarProps) {
     { label: '교육과정', href: '/curriculum', hasDropdown: true },
     { label: '교수진', href: '/faculty' },
     { label: '학생광장', href: '/community' },
-    { label: '공지사항', href: '/notice' },
+    { label: '연구실', href: '/lab' },
   ];
 
   // Close menu when clicking outside

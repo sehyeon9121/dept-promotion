@@ -11,7 +11,7 @@ import {
   CourseMapPage,
   CourseOverviewPage,
   LabStatusPage,
-  NewsPage,
+  LabPage,
   BigQuestionsPage,
   BigQuestionDetailPage,
   ContactPage,
@@ -55,7 +55,7 @@ function App() {
         <Route path="/curriculum/course-map" element={<CourseMapPage />} />
         <Route path="/curriculum/course-overview" element={<CourseOverviewPage />} />
         <Route path="/curriculum/lab-status" element={<LabStatusPage />} />
-        <Route path="/notice" element={<NewsPage />} />
+        <Route path="/lab" element={<LabPage />} />
         <Route path="/career" element={<BigQuestionsPage />} />
         <Route path="/career/:id" element={<BigQuestionDetailPage />} />
         <Route path="/contact" element={<ContactPage />} />

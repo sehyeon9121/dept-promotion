@@ -46,6 +46,19 @@ export interface TeamMember {
   affiliation?: LocalizedText;
 }
 
+// Faculty Member (교수진)
+export interface FacultyMember {
+  name: string;
+  nameEn: string;
+  role: string;
+  image: string;
+  major: string;
+  degree: string;
+  lab: string;
+  phone: string;
+  email: string;
+}
+
 // Participating Institution
 export interface ParticipatingInstitution {
   name: string;

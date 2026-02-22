@@ -1,2 +1,2 @@
-export { TeamMemberCard } from './TeamMemberCard';
-export type { TeamMemberCardProps } from './TeamMemberCard';
+export { FacultyCard } from './TeamMemberCard';
+export type { FacultyCardProps } from './TeamMemberCard';
