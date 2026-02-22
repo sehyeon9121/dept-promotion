@@ -84,37 +84,41 @@ export function LabPage() {
 
   return (
     <PageLayout>
-      <HeroSection
+     <HeroSection
         variant="subpage"
         title="연구실"
         subtitle="건축공학과 연구실 소개"
         backgroundImage="/images/leeseunglab/hero-background.jpg"
       />
 
-      {/* 1. 가장 바깥쪽 Wrapper */}
-      <section className="w-full py-20 bg-white">
-        {/* 2. 중앙 정렬 컨테이너 */}
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          {/* Tab Menu */}
-          <div className="flex flex-wrap justify-center gap-6 mb-12">
+      {/* 👇 여기에 강제로 높이 150px짜리 투명 기둥을 세웁니다! 👇 */}
+      <div style={{ height: '150px', width: '100%', backgroundColor: 'transparent' }}></div>
+
+      {/* 중앙 정렬을 강제하는 완벽한 뼈대 Wrapper */}
+      <section className="w-full bg-white flex flex-col items-center justify-center py-10 overflow-hidden">
+        
+        {/* 전체 컨텐츠를 정중앙으로 모아주는 컨테이너 */}
+        <div className="w-full max-w-6xl mx-auto px-4 md:px-8">
+          
+        {/* Tab Menu */}
+          <div className="flex flex-wrap justify-center gap-4 mb-24">
             {labData.map((lab, index) => (
               <button
                 key={lab.id}
                 type="button"
                 onClick={() => setActiveTab(index)}
-                className={[
-                  'px-6 py-3 text-[15px] rounded-full transition-all duration-200',
+                className={`px-6 py-3 text-[15px] rounded-full transition-all duration-200 ${
                   activeTab === index
-                    ? 'bg-slate-900 !text-black font-bold shadow-md'
-                    : 'bg-white !text-slate-600 font-medium border border-slate-200 hover:bg-slate-50',
-                ].join(' ')}
+                    ? 'bg-white text-slate-900 font-bold border-2 border-slate-900 shadow-md' // 하얀 배경, 진한 네이비 글씨, 두꺼운 테두리로 변경!
+                    : 'bg-white text-slate-500 font-medium border border-slate-200 hover:bg-slate-50'
+                }`}
               >
                 {lab.name}
               </button>
             ))}
           </div>
 
-          {/* Content Area */}
+    {/* Content Area (사진 + 설명 박스) */}
           <AnimatePresence mode="wait">
             <motion.div
               key={activeLab.id}
@@ -122,102 +126,96 @@ export function LabPage() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
               transition={{ duration: 0.35, ease: 'easeOut' }}
+              className="w-full max-w-5xl mx-auto flex flex-col mb-20"
             >
-              {/* 3. 컨텐츠 영역 (사진 + 설명 박스) */}
-              <div className="relative max-w-5xl mx-auto mt-12">
-                {/* Image */}
-                <img
-                  src={activeLab.image}
-                  alt={activeLab.name}
-                  className="w-full h-[500px] object-cover rounded-xl"
-                />
+              {/* Image */}
+              <img
+                src={activeLab.image}
+                alt={activeLab.name}
+                className="w-full h-[400px] md:h-[500px] object-cover rounded-2xl shadow-sm"
+              />
 
-                {/* Text Box - 사진 우측 하단에 겹치는 오버랩 */}
-                <div className="absolute bottom-0 right-0 translate-y-1/4 translate-x-0 md:translate-x-12 w-[90%] md:w-[65%] bg-white shadow-lg rounded-xl p-8">
-                  {/* Header with icon */}
-                  <div className="flex items-center gap-2.5 mb-4">
+              {/* Text Box (사진 바로 아래에 깔끔하게 배치) */}
+              <div className="w-full bg-white p-8 md:p-10 shadow-lg border border-slate-100 rounded-xl mt-8">
+                
+                {/* Header with icon */}
+                <div className="flex items-center gap-2.5 mb-5">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-orange-500 flex-shrink-0"
+                  >
+                    <path d="M9 3h6" />
+                    <path d="M10 3v7.4a2 2 0 0 1-.5 1.3L4 18.6a1 1 0 0 0 .7 1.7h14.6a1 1 0 0 0 .7-1.7l-5.5-6.9a2 2 0 0 1-.5-1.3V3" />
+                    <path d="M8.5 14h7" />
+                  </svg>
+                  <h3 className="text-slate-900 font-bold tracking-tight text-lg">
+                    {activeLab.name} 소개
+                  </h3>
+                </div>
+
+                {/* Dashed divider */}
+                <div className="border-t border-dashed border-slate-300 mb-5" />
+
+                {/* Description */}
+                <p className="text-slate-600 leading-relaxed text-[15px] mb-8">
+                  {activeLab.description}
+                </p>
+
+                {/* Professor Section */}
+                <div className="bg-slate-50 rounded-lg p-5 border border-slate-100">
+                  <div className="flex items-center gap-2 mb-3">
                     <svg
-                      width="20"
-                      height="20"
+                      width="16"
+                      height="16"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
-                      strokeWidth="1.8"
+                      strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       className="text-slate-800 flex-shrink-0"
                     >
-                      <path d="M9 3h6" />
-                      <path d="M10 3v7.4a2 2 0 0 1-.5 1.3L4 18.6a1 1 0 0 0 .7 1.7h14.6a1 1 0 0 0 .7-1.7l-5.5-6.9a2 2 0 0 1-.5-1.3V3" />
-                      <path d="M8.5 14h7" />
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                      <circle cx="12" cy="7" r="4" />
                     </svg>
-                    <h3 className="text-slate-900 font-bold tracking-tight text-[14.5px]">
-                      {activeLab.name} 소개
-                    </h3>
+                    <span className="text-slate-900 font-bold text-[13px]">
+                      지도 교수
+                    </span>
                   </div>
 
-                  {/* Dashed divider */}
-                  <div className="border-t border-dashed border-slate-300 mb-4" />
-
-                  {/* Description */}
-                  <p className="text-slate-600 leading-relaxed text-[12.5px]">
-                    {activeLab.description}
-                  </p>
-
-                  {/* Professor Section */}
-                  <div className="border-t border-dashed border-slate-200 mt-6 pt-6">
-                    <div className="bg-slate-50 rounded-lg p-5">
-                      <div className="flex items-center gap-2 mb-3">
-                        <svg
-                          width="16"
-                          height="16"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="text-slate-800 flex-shrink-0"
-                        >
-                          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                          <circle cx="12" cy="7" r="4" />
-                        </svg>
-                        <span className="text-slate-900 font-bold text-xs">
-                          지도 교수
+                  <div className="flex items-center justify-between flex-wrap gap-4">
+                    <div>
+                      <div className="flex items-baseline gap-2 mb-1.5">
+                        <span className="text-slate-900 font-bold text-base">
+                          {activeLab.professor.name}
+                        </span>
+                        <span className="text-slate-500 text-[13px]">
+                          {activeLab.professor.title}
                         </span>
                       </div>
-
-                      <div className="flex items-center justify-between flex-wrap gap-3">
-                        <div>
-                          <div className="flex items-baseline gap-2 mb-1.5">
-                            <span className="text-slate-900 font-bold text-sm">
-                              {activeLab.professor.name}
-                            </span>
-                            <span className="text-slate-400 text-[11px]">
-                              {activeLab.professor.title}
-                            </span>
-                          </div>
-                          <div className="flex items-center gap-1.5 text-slate-500 text-[11px]">
-                            <span>{activeLab.professor.phone}</span>
-                            <span className="text-slate-300">|</span>
-                            <span>{activeLab.professor.email}</span>
-                          </div>
-                        </div>
-
-                        <a
-                          href={activeLab.professor.link}
-                          className="text-slate-500 hover:text-slate-700 transition-colors text-[11px]"
-                        >
-                          교수진 상세 보기 &gt;
-                        </a>
+                      <div className="flex items-center gap-2 text-slate-500 text-[13px]">
+                        <span>{activeLab.professor.phone}</span>
+                        <span className="text-slate-300">|</span>
+                        <span>{activeLab.professor.email}</span>
                       </div>
                     </div>
+
+                    <a
+                      href={activeLab.professor.link}
+                      className="inline-flex items-center justify-center px-4 py-2 bg-white border border-slate-200 rounded-md text-slate-600 text-[13px] hover:bg-slate-50 hover:text-orange-500 transition-colors shadow-sm"
+                    >
+                      교수진 상세 보기 &gt;
+                    </a>
                   </div>
                 </div>
               </div>
-
-              {/* 오버랩 박스가 아래로 삐져나오는 만큼 여백 확보 */}
-              <div className="h-40 md:h-48" />
             </motion.div>
           </AnimatePresence>
         </div>

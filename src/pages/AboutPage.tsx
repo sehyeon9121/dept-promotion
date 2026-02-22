@@ -41,11 +41,12 @@ export function AboutPage() {
   return (
     <PageLayout>
       {/* Navbar 높이만큼 상단 여백 */}
-      <div className="pt-[72px]" />
+      <div className="w-full pt-[72px]" />
 
       {/* ========== SUB-NAV TABS ========== */}
-      <div className="bg-white border-b border-gray-200 sticky top-[72px] z-30">
-        <div className="max-w-5xl mx-auto px-6">
+      {/* w-full과 flex justify-center를 추가하여 탭 메뉴 바를 화면 중앙으로 고정 */}
+      <div className="w-full bg-white border-b border-gray-200 sticky top-[72px] z-30 flex justify-center">
+        <div className="w-full max-w-5xl px-6">
           <nav className="flex gap-0">
             {tabs.map((tab) => (
               <button
@@ -76,11 +77,12 @@ export function AboutPage() {
       </div>
 
       {/* ========== PAGE CONTENT ========== */}
-      <div className="bg-white">
+      {/* 전체 배경을 w-full로 덮고 내부 요소를 flex-col로 중앙에 쌓음 */}
+      <div className="w-full bg-white flex flex-col items-center overflow-hidden">
 
         {/* ====== "건축공학이란?" 섹션 ====== */}
-        <section className="py-20 md:py-28">
-          <div className="max-w-5xl mx-auto px-6">
+        <section className="w-full py-20 md:py-28 flex justify-center">
+          <div className="w-full max-w-5xl px-6">
             <motion.div
               variants={staggerContainer}
               initial="hidden"
@@ -158,13 +160,13 @@ export function AboutPage() {
         </section>
 
         {/* ====== 구분선 ====== */}
-        <div className="max-w-5xl mx-auto px-6">
+        <div className="w-full max-w-5xl px-6">
           <div className="h-px bg-gray-100" />
         </div>
 
         {/* ====== "교육목표" 섹션 ====== */}
-        <section className="py-20 md:py-28">
-          <div className="max-w-5xl mx-auto px-6">
+        <section className="w-full py-20 md:py-28 flex justify-center">
+          <div className="w-full max-w-5xl px-6">
             <motion.div
               variants={staggerContainer}
               initial="hidden"
@@ -287,7 +289,7 @@ export function AboutPage() {
         </section>
 
         {/* 하단 여백 */}
-        <div className="h-20" />
+        <div className="w-full h-20" />
       </div>
     </PageLayout>
   );

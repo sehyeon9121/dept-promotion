@@ -27,11 +27,12 @@ export function TrackSection({
   className,
 }: TrackSectionProps) {
   return (
-    <section className={cn('relative py-32 md:py-40 bg-white overflow-hidden', className)}>
-      <div className="max-w-7xl mx-auto px-8">
+    <section className={cn('w-full relative py-32 md:py-40 bg-white flex flex-col items-center justify-center overflow-hidden', className)}>
+      <div className="w-full max-w-7xl mx-auto px-4 md:px-8">
+        
         {/* Header */}
         <motion.div
-          className="text-center mb-20"
+          className="text-center mb-20 flex flex-col items-center"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -48,7 +49,7 @@ export function TrackSection({
         </motion.div>
 
         {/* Track Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 w-full">
           {tracks.map((track, index) => (
             <TrackCard
               key={track.title}
@@ -61,6 +62,7 @@ export function TrackSection({
             />
           ))}
         </div>
+        
       </div>
     </section>
   );

@@ -78,7 +78,7 @@ export function HomePage() {
       title: 'BIM & 디지털 건설',
       titleEn: 'BIM & Digital Construction',
       description: 'BIM과 디지털 기술을 활용해 설계·시공·유지관리 전 과정을 통합적으로 이해하는 스마트 건설 역량을 기릅니다.',
-      details: [], // TODO: 세부 항목 추후 추가
+      details: [],
       icon: (
         <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <path d="M2 3h20v18H2z" /><path d="M8 7v10" /><path d="M12 7v10" /><path d="M16 7v10" /><path d="M2 12h20" />
@@ -88,8 +88,8 @@ export function HomePage() {
     {
       title: '건축 환경 & 설비',
       titleEn: 'Building Environment & MEP',
-      description: '건축 환경 성능과 설비 시스템을 분석하여 쾌적하고 에너지 효율적인 건축 환경을 설계합니다.', // TODO: 세부 내용 추후 추가
-      details: [], // TODO: 세부 항목 추후 추가
+      description: '건축 환경 성능과 설비 시스템을 분석하여 쾌적하고 에너지 효율적인 건축 환경을 설계합니다.',
+      details: [],
       icon: (
         <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <path d="M12 2v8" /><path d="M4.93 10.93l1.41 1.41" /><path d="M2 18h2" /><path d="M20 18h2" /><path d="M17.66 12.34l1.41-1.41" /><path d="M16 18a4 4 0 0 0-8 0" /><path d="M12 18v4" />
@@ -99,8 +99,8 @@ export function HomePage() {
     {
       title: '건축 설계 & 통합 디자인',
       titleEn: 'Architectural Design & Integrated Design',
-      description: '구조·시공·환경 요소를 종합적으로 고려하여 실현 가능한 건축 설계와 공학적 디자인 능력을 배양합니다.', // TODO: 세부 내용 추후 추가
-      details: [], // TODO: 세부 항목 추후 추가
+      description: '구조·시공·환경 요소를 종합적으로 고려하여 실현 가능한 건축 설계와 공학적 디자인 능력을 배양합니다.',
+      details: [],
       icon: (
         <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <path d="M12 19l7-7 3 3-7 7-3-3z" /><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" /><path d="M2 2l7.586 7.586" /><circle cx="11" cy="11" r="2" />
@@ -109,17 +109,17 @@ export function HomePage() {
     },
   ];
 
-
   return (
     <PageLayout>
       {/* ========== HERO SECTION ========== */}
+      {/* w-full 추가하여 100% 너비 확보 */}
       <section
         ref={heroRef}
-        className="hero-section relative min-h-[600px] flex items-center justify-center overflow-hidden"
+        className="hero-section relative w-full min-h-[600px] flex items-center justify-center overflow-hidden"
       >
         {/* Parallax Background */}
         <motion.div
-          className="absolute inset-0"
+          className="absolute inset-0 w-full h-full"
           style={{
             backgroundImage: `url(${getImageSrc('/images/leeseunglab/hero_section.jpg')})`,
             backgroundSize: 'cover',
@@ -128,11 +128,11 @@ export function HomePage() {
           }}
         />
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/60 to-slate-900/90" />
+        <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-slate-900/70 via-slate-900/60 to-slate-900/90" />
 
         {/* Hero Content - Center Aligned */}
         <motion.div
-          className="relative z-10 text-center px-6 max-w-4xl mx-auto"
+          className="relative z-10 w-full text-center px-6 max-w-4xl mx-auto"
           style={{ opacity: heroOpacity }}
         >
           <motion.div
@@ -187,12 +187,16 @@ export function HomePage() {
       </section>
 
       {/* ========== ABOUT SECTION (Why Architecture?) ========== */}
-      <section className="relative py-32 md:py-40 bg-white overflow-hidden">
-        <div className="max-w-6xl mx-auto px-6">
+      {/* 화면 전체를 꽉 채우고(w-full), 강제로 중앙으로 모으는(flex flex-col items-center) 구조로 변경 */}
+      <section className="w-full relative py-32 md:py-40 bg-white flex flex-col items-center justify-center overflow-hidden">
+        
+        {/* 중앙으로 정렬될 핵심 컨텐츠 박스 */}
+        <div className="w-full max-w-6xl mx-auto px-6">
           <div className="flex flex-col lg:flex-row gap-16 items-center">
+            
             {/* Left: Text */}
             <motion.div
-              className="flex-1 lg:max-w-xl"
+              className="flex-1 lg:max-w-xl w-full"
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -218,13 +222,13 @@ export function HomePage() {
 
             {/* Right: Image Grid (2 overlapping images) */}
             <motion.div
-              className="flex-1 relative"
+              className="flex-1 relative w-full"
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.2 }}
             >
-              <div className="relative" style={{ minHeight: '400px' }}>
+              <div className="relative w-full" style={{ minHeight: '400px' }}>
                 {/* Main Image */}
                 <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl" style={{ width: '85%' }}>
                   <img
@@ -263,7 +267,7 @@ export function HomePage() {
       />
 
       {/* 하단 흰색 여백 */}
-      <div className="bg-white h-64 md:h-96" />
+      <div className="w-full bg-white h-64 md:h-96" />
 
     </PageLayout>
   );

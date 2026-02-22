@@ -78,7 +78,7 @@ export function HeroSection({
           </>
         )}
 
-        <div className="absolute inset-0 z-10 flex flex-col justify-center hero-content-container">
+        <div className="absolute inset-0 z-10 flex flex-col justify-center items-center hero-content-container">
           {backLink && (
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -135,7 +135,7 @@ export function HeroSection({
   return (
     <section
       className={cn(
-        'hero-section relative flex items-center justify-start overflow-hidden',
+        'hero-section relative flex items-center justify-center overflow-hidden',
         !aspectRatio && minHeightClasses[minHeight],
         className
       )}
