@@ -91,8 +91,10 @@ export function LabPage() {
         backgroundImage="/images/leeseunglab/hero-background.jpg"
       />
 
-      <section className="bg-white" style={{ paddingTop: 80, paddingBottom: 120 }}>
-        <div className="mx-auto" style={{ maxWidth: 1100, padding: '0 24px' }}>
+      {/* 1. 가장 바깥쪽 Wrapper */}
+      <section className="w-full py-20 bg-white">
+        {/* 2. 중앙 정렬 컨테이너 */}
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
           {/* Tab Menu */}
           <div className="flex flex-wrap justify-center gap-6 mb-12">
             {labData.map((lab, index) => (
@@ -120,118 +122,102 @@ export function LabPage() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
               transition={{ duration: 0.35, ease: 'easeOut' }}
-              className="mt-40"
             >
-              {/* Image */}
-              <div className="w-full">
+              {/* 3. 컨텐츠 영역 (사진 + 설명 박스) */}
+              <div className="relative max-w-5xl mx-auto mt-12">
+                {/* Image */}
                 <img
                   src={activeLab.image}
                   alt={activeLab.name}
-                  className="w-full object-cover"
-                  style={{ height: 420 }}
+                  className="w-full h-[500px] object-cover rounded-xl"
                 />
-              </div>
 
-              {/* Text Box */}
-              <div
-                className="bg-white shadow-lg"
-                style={{
-                  width: '100%',
-                  padding: '32px 36px',
-                  marginTop: '24px',
-                }}
-              >
-                {/* Header with icon */}
-                <div className="flex items-center gap-2.5 mb-4">
-                  {/* Flask icon */}
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="text-slate-800 flex-shrink-0"
-                  >
-                    <path d="M9 3h6" />
-                    <path d="M10 3v7.4a2 2 0 0 1-.5 1.3L4 18.6a1 1 0 0 0 .7 1.7h14.6a1 1 0 0 0 .7-1.7l-5.5-6.9a2 2 0 0 1-.5-1.3V3" />
-                    <path d="M8.5 14h7" />
-                  </svg>
-                  <h3
-                    className="text-slate-900 font-bold tracking-tight"
-                    style={{ fontSize: '14.5px' }}
-                  >
-                    {activeLab.name} 소개
-                  </h3>
-                </div>
+                {/* Text Box - 사진 우측 하단에 겹치는 오버랩 */}
+                <div className="absolute bottom-0 right-0 translate-y-1/4 translate-x-0 md:translate-x-12 w-[90%] md:w-[65%] bg-white shadow-lg rounded-xl p-8">
+                  {/* Header with icon */}
+                  <div className="flex items-center gap-2.5 mb-4">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="text-slate-800 flex-shrink-0"
+                    >
+                      <path d="M9 3h6" />
+                      <path d="M10 3v7.4a2 2 0 0 1-.5 1.3L4 18.6a1 1 0 0 0 .7 1.7h14.6a1 1 0 0 0 .7-1.7l-5.5-6.9a2 2 0 0 1-.5-1.3V3" />
+                      <path d="M8.5 14h7" />
+                    </svg>
+                    <h3 className="text-slate-900 font-bold tracking-tight text-[14.5px]">
+                      {activeLab.name} 소개
+                    </h3>
+                  </div>
 
-                {/* Dashed divider */}
-                <div className="border-t border-dashed border-slate-300 mb-4" />
+                  {/* Dashed divider */}
+                  <div className="border-t border-dashed border-slate-300 mb-4" />
 
-                {/* Description */}
-                <p
-                  className="text-slate-600 leading-relaxed"
-                  style={{ fontSize: '12.5px' }}
-                >
-                  {activeLab.description}
-                </p>
+                  {/* Description */}
+                  <p className="text-slate-600 leading-relaxed text-[12.5px]">
+                    {activeLab.description}
+                  </p>
 
-                {/* Professor Section */}
-                <div className="border-t border-dashed border-slate-200 mt-6 pt-6">
-                  <div className="bg-slate-50 rounded-lg p-5">
-                    {/* Professor Header */}
-                    <div className="flex items-center gap-2 mb-3">
-                      {/* User icon */}
-                      <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="text-slate-800 flex-shrink-0"
-                      >
-                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                        <circle cx="12" cy="7" r="4" />
-                      </svg>
-                      <span className="text-slate-900 font-bold" style={{ fontSize: '12px' }}>
-                        지도 교수
-                      </span>
-                    </div>
-
-                    {/* Professor Info */}
-                    <div className="flex items-center justify-between flex-wrap gap-3">
-                      <div>
-                        <div className="flex items-baseline gap-2 mb-1.5">
-                          <span className="text-slate-900 font-bold" style={{ fontSize: '14px' }}>
-                            {activeLab.professor.name}
-                          </span>
-                          <span className="text-slate-400" style={{ fontSize: '11px' }}>
-                            {activeLab.professor.title}
-                          </span>
-                        </div>
-                        <div className="flex items-center gap-1.5 text-slate-500" style={{ fontSize: '11px' }}>
-                          <span>{activeLab.professor.phone}</span>
-                          <span className="text-slate-300">|</span>
-                          <span>{activeLab.professor.email}</span>
-                        </div>
+                  {/* Professor Section */}
+                  <div className="border-t border-dashed border-slate-200 mt-6 pt-6">
+                    <div className="bg-slate-50 rounded-lg p-5">
+                      <div className="flex items-center gap-2 mb-3">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="text-slate-800 flex-shrink-0"
+                        >
+                          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                          <circle cx="12" cy="7" r="4" />
+                        </svg>
+                        <span className="text-slate-900 font-bold text-xs">
+                          지도 교수
+                        </span>
                       </div>
 
-                      <a
-                        href={activeLab.professor.link}
-                        className="text-slate-500 hover:text-slate-700 transition-colors"
-                        style={{ fontSize: '11px' }}
-                      >
-                        교수진 상세 보기 &gt;
-                      </a>
+                      <div className="flex items-center justify-between flex-wrap gap-3">
+                        <div>
+                          <div className="flex items-baseline gap-2 mb-1.5">
+                            <span className="text-slate-900 font-bold text-sm">
+                              {activeLab.professor.name}
+                            </span>
+                            <span className="text-slate-400 text-[11px]">
+                              {activeLab.professor.title}
+                            </span>
+                          </div>
+                          <div className="flex items-center gap-1.5 text-slate-500 text-[11px]">
+                            <span>{activeLab.professor.phone}</span>
+                            <span className="text-slate-300">|</span>
+                            <span>{activeLab.professor.email}</span>
+                          </div>
+                        </div>
+
+                        <a
+                          href={activeLab.professor.link}
+                          className="text-slate-500 hover:text-slate-700 transition-colors text-[11px]"
+                        >
+                          교수진 상세 보기 &gt;
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
+
+              {/* 오버랩 박스가 아래로 삐져나오는 만큼 여백 확보 */}
+              <div className="h-40 md:h-48" />
             </motion.div>
           </AnimatePresence>
         </div>
