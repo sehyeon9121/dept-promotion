@@ -142,9 +142,9 @@ export function CourseMapPage() {
 
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { label: '총 이수학점', value: '130학점', desc: '교양 + 전공 + 자유선택' },
-                { label: '전공 필수', value: '60학점', desc: '전공기초 18 + 전공필수 42' },
-                { label: '캡스톤디자인', value: '필수 이수', desc: '졸업설계 I, II 포함' },
+                { label: '총 이수학점', value: '150학점', desc: '교양 + 전공 + 자유선택' },
+                { label: '전공', value: '76학점', desc: '전공필수 43 + 전공선택 33' },
+                { label: '졸업설계(캡스톤디자인) + 현장실습', value: '필수 이수', desc: '졸업설계 I, II 포함' },
               ].map((item, i) => (
                 <motion.div
                   key={i}
