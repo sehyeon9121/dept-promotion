@@ -141,7 +141,7 @@ export function NavigationBar({ className }: NavigationBarProps) {
               <span className="text-white font-bold text-sm">A</span>
             </div>
             <span className="text-slate-900 font-semibold text-lg tracking-tight">
-              건축공학과
+              한국기술교육대학교 건축공학과
             </span>
           </a>
         </div>
