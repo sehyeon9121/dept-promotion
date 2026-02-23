@@ -25,7 +25,7 @@ export function FooterContent({ className }: FooterContentProps) {
           className="text-slate-500"
           style={{ fontSize: 14 }}
         >
-          © {currentYear} OO대학교 건축공학과. All rights reserved.
+          © {currentYear} 한국기술교육대학교 건축공학과. All rights reserved.
         </motion.div>
       </div>
     </footer>

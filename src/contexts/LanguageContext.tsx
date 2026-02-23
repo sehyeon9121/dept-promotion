@@ -138,7 +138,7 @@ const translations: Record<string, string> = {
   'common.backToTop': '맨 위로',
 
   // Footer
-  'footer.copyright': '© 2024 OO대학교 건축공학과. All rights reserved.',
+  'footer.copyright': '© 2024 한국기술교육대학교 건축공학과. All rights reserved.',
   'footer.contact': '연락처',
   'footer.location': '위치',
 };
